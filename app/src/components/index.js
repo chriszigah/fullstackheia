@@ -17,7 +17,7 @@ export { default as CheckPayment } from "./StudentDashboard/CheckPayment.jsx";
 export { default as TakeQuiz } from "./StudentDashboard/TakeQuiz.jsx";
 export { default as ContactTeacher } from "./StudentDashboard/ContactTeacher.jsx";
 export { default as CheckResult } from "./StudentDashboard/CheckResult.jsx";
-export { default as PcheckResult } from "./ParentsDashboard/CheckResult.jsx";
+export { default as PcheckResult } from "./ParentsDashBoard/CheckResult.jsx";
 export { default as PmakePayments } from "./ParentsDashboard/MakePayment.jsx";
 export { default as PnoticeBoard } from "./ParentsDashboard/NoticeBoard.jsx";
 export { default as TnoticeBoard } from "./TeachersDashboard/NoticeBoard.jsx";
