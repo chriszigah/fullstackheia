@@ -1,7 +1,6 @@
-import React from "react";
 import ParentDashNav from "./ParentDashNav";
 
-const PmakePayment = () => {
+const PmakePayments = () => {
   return (
     <div>
       <ParentDashNav />
@@ -10,4 +9,4 @@ const PmakePayment = () => {
   );
 };
 
-export default PmakePayment;
+export default PmakePayments;
