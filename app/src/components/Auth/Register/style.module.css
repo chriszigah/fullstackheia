@@ -1,0 +1,142 @@
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #134074;
+  background-size: cover;
+  background-position: center;
+}
+
+.formContainerp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9dc5c;
+  background-size: cover;
+  background-position: center;
+}
+
+.formContainer h1 {
+  padding-bottom: 20px;
+  font-weight: 500;
+  font-size: 2.7rem;
+}
+
+.formContainer a span {
+  color: #134074;
+}
+.home a span:hover {
+  text-decoration: none !important;
+  color: #e03616;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #134074;
+}
+
+input {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+label {
+  font-size: 12px;
+}
+form {
+  background-color: #fff;
+  padding: 50px 60px;
+  margin: 30px;
+  max-width: 450px;
+  padding: 40px 40px;
+  width: 90%;
+  border-radius: 10px;
+}
+
+h1 {
+  color: rgb(77, 1, 77);
+  text-align: center;
+  padding-top: 5px;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  position: relative;
+}
+
+.span {
+  font: size 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+.input:invalid[focused="true"] ~ span {
+  display: block;
+}
+
+.input:invalid[focused="true"] {
+  border: 1px solid red;
+}
+
+.submitButton {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-color: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+  background-color: #e03616;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.submitButtonp {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-color: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+  background-color: #134074;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+label {
+  font-size: 18px;
+}
+
+.small {
+  margin-bottom: 30px;
+}
+
+.small a {
+  text-decoration: none;
+  color: #e03616;
+}
+
+.small a:hover {
+  color: #134074;
+  text-decoration: none;
+}
+
+.submitButton:hover {
+  background-color: #e25033;
+}

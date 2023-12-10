@@ -1,0 +1,10 @@
+.carousel {
+  margin-top: 64px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .carousel {
+    display: none;
+  }
+}

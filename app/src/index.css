@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+:root {
+  --primary-color: #134074;
+  --secondary-color: #e03616;
+  --tertiary-color: #f9dc5c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+  min-height: 100vh;
+}
+
+.carousel .thumbs {
+  display: none;
+}
+
+p {
+  font-size: 18px;
+}

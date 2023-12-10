@@ -1,0 +1,14 @@
+{
+  "name": "heiaFullstack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:app": "cd app && npm run dev",
+    "start:api": "cd api && npm run dev",
+    "both-dev": "concurrently \"npm run start:app\" \"npm run start:api\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

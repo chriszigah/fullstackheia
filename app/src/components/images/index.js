@@ -1,0 +1,11 @@
+export { default as admission } from "./admission.jpg";
+export { default as coding } from "./coding.jpg";
+export { default as mobilemoney } from "./mobilemoney.jpg";
+export { default as momo } from "./momo.jpg";
+export { default as summercamp } from "./summercamp.jpg";
+export { default as logo } from "./logo.png";
+export { default as students } from "./students.jpg";
+export { default as teachers } from "./teachers.jpg";
+export { default as parents } from "./parents.png";
+export { default as researchers } from "./researchers.jpg";
+export { default as heiabanner } from "./heia-banner.png";

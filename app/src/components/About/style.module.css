@@ -1,0 +1,39 @@
+/* Clear floats after the columns */
+.aboutInfoWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.aboutInfoColumn {
+  float: left;
+  width: 50%;
+  padding: 15px;
+  margin: 5px auto;
+}
+.aboutInfoWrapper::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.aboutInfoColumn p {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Responsive columns */
+/*Large Screen*/
+@media screen and (max-width: 1000px) {
+  .aboutInfoColumn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .aboutInfoColumn p {
+    text-align: center;
+  }
+}

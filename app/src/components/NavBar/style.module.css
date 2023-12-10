@@ -1,0 +1,150 @@
+/* Header Global Style */
+.navwrapper {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  background-color: #134074;
+}
+header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+header a:hover {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* Header */
+header {
+  position: relative;
+  padding: 0 2rem;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  height: 70px;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  height: 100%;
+  line-height: 64px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo2,
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin: 8px 12px;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links a {
+  border-bottom: 2px solid transparent;
+}
+
+.activeLink {
+  border-bottom: 2px solid var(--tertiary-color);
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.login {
+  text-decoration: underline;
+}
+
+.register {
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register:hover {
+  scale: 1.05;
+  color: #ffff;
+}
+
+.menuBtn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .logo {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 2.1rem;
+    padding: 0;
+    margin-left: 0;
+  }
+
+  .links,
+  .auth {
+    display: none;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+}
+
+.dashNav {
+  display: flex;
+  height: 35px;
+  background-color: #f9dc5c;
+  border-radius: 10px;
+  margin: 4px;
+  align-items: center;
+}
+
+.dashNav:hover {
+  background-color: #fff;
+}
+
+.dashNav a {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 25px 15px 25px 15px;
+  text-transform: uppercase;
+}
+
+.dashNav a:hover {
+  color: #e03616;
+}

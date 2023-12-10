@@ -1,0 +1,43 @@
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 300px;
+  padding: 3rem 0;
+  background-color: rgb(249, 220, 92);
+  overflow: hidden;
+  transform: translateX(1000px);
+  transition: transform 0.9s ease-in-out;
+}
+
+.sidebar a {
+  color: #134074;
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.sidebar a:hover {
+  text-decoration: none;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+  box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.5);
+}
+
+.closeIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.closeIcon:hover {
+  opacity: 0.9;
+  scale: 1.1;
+}
