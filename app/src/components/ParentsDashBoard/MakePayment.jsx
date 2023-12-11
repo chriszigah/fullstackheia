@@ -1,9 +1,9 @@
-import ParentDashNav from "./ParentDashNav";
+import StudentDashNav from "./ParentDashNav";
 
 const PmakePayments = () => {
   return (
     <div>
-      <ParentDashNav />
+      <StudentDashNav />
       <h1>Make Payments</h1>
     </div>
   );
