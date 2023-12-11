@@ -6,9 +6,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-/app/dev-dist
+/app/dev-dist/**
 /dist
 yarn.lock
+
+sw.js
+
+/dev-dist/**
 
 node_modules
 dist
