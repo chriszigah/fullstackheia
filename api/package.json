@@ -11,9 +11,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node": "18.x"
-  },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-sqlite3": "^0.9.13",
