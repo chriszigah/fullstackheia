@@ -18,8 +18,6 @@ export { default as TakeQuiz } from "./StudentDashboard/TakeQuiz.jsx";
 export { default as ContactTeacher } from "./StudentDashboard/ContactTeacher.jsx";
 export { default as CheckResult } from "./StudentDashboard/CheckResult.jsx";
 export { default as PcheckResult } from "./ParentsDashBoard/CheckResult.jsx";
-export { default as PmakePayments } from "./ParentsDashBoard/MakePayment.jsx";
-export { default as PnoticeBoard } from "./ParentsDashBoard/NoticeBoard.jsx";
 export { default as TnoticeBoard } from "./TeachersDashboard/NoticeBoard.jsx";
 export { default as TcheckPayments } from "./TeachersDashboard/CheckPayments.jsx";
 export { default as TcontactParent } from "./TeachersDashboard/ContactParent.jsx";
