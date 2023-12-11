@@ -68,10 +68,9 @@ app.use(
 // Helmet (no-cache)
 app.use(helmet());
 
-/*
 // Morgan Logs
 const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, "./src/logs/access.log"),
+  path.join(__dirname, "./logs/access.log"),
   {
     flags: "a",
   }
@@ -95,7 +94,7 @@ app.use(
     ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" :user :sessionid'
   )
 );
-*/
+
 // Routes
 app.use("/", indexRouter);
 

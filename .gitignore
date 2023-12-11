@@ -9,6 +9,7 @@ lerna-debug.log*
 /app/dev-dist/**
 /dist
 yarn.lock
+package-lock.json
 
 sw.js
 
