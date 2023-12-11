@@ -89,11 +89,13 @@ morgan.token("user", function (req, res, param) {
   }
 });
 
-app.use(
-  morgan(
-    ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" :user :sessionid'
-  )
-);
+process.env.NODE_ENV === "development"
+  ? app.use(
+      morgan(
+        ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" :user :sessionid'
+      )
+    )
+  : "";
 
 // Routes
 app.use("/", indexRouter);
