@@ -70,7 +70,7 @@ app.use(helmet());
 
 // Morgan Logs
 const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, "./logs/access.log"),
+  path.join(__dirname, "./src/logs/access.log"),
   {
     flags: "a",
   }
@@ -89,13 +89,11 @@ morgan.token("user", function (req, res, param) {
   }
 });
 
-process.env.NODE_ENV === "development"
-  ? app.use(
-      morgan(
-        ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" :user :sessionid'
-      )
-    )
-  : "";
+app.use(
+  morgan(
+    ':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent" :user :sessionid'
+  )
+);
 
 // Routes
 app.use("/", indexRouter);
