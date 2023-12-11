@@ -1,4 +1,3 @@
-import React from "react";
 import TeacherDashNav from "./StudentDashNav";
 
 const TcheckPayments = () => {

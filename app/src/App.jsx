@@ -1,35 +1,33 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
-import {
-  AuthRoutes,
-  NotFound,
-  Profile,
-  Login,
-  Home,
-  Register,
-  TakeQuiz,
-  CheckResult,
-  NoticeBoard,
-  ContactTeacher,
-  CheckPayment,
-  StudentDashboard,
-  PcheckResult,
-  TcheckPayments,
-  TcontactParent,
-  TmanageClass,
-  TnoticeBoard,
-  AcheckPayments,
-  AcreateClass,
-  AcreateNotice,
-  AcreatePayments,
-  AcreateSubjects,
-  Ahome,
-  AnoticeBoard,
-} from "./components";
 
 import PnoticeBoard from "./components/ParentsDashBoard/NoticeBoard";
 import PmakePayments from "./components/ParentsDashBoard/MakePayment";
+import AuthRoutes from "./components/Auth/ProtectedRoutes/AuthRoutes";
+import NotFound from "./components/404/404";
+import Profile from "./components/Profile/Profile";
+import Login from "./components/Auth/Login/Login";
+import Home from "./components/Home/Home";
+import Register from "./components/Auth/Register/Register";
+import TakeQuiz from "./components/StudentDashboard/TakeQuiz";
+import CheckResult from "./components/StudentDashboard/CheckResult";
+import ContactTeacher from "./components/StudentDashboard/ContactTeacher";
+import CheckPayment from "./components/StudentDashboard/CheckPayment";
+import StudentDashboard from "./components/StudentDashboard/StudentDashboard";
+import PcheckResult from "./components/ParentsDashBoard/CheckResult";
+import TcheckPayments from "./components/TeachersDashBoard/CheckPayments";
+import TcontactParent from "./components/TeachersDashBoard/ContactParent";
+import TmanageClass from "./components/TeachersDashBoard/ManageClass";
+import TnoticeBoard from "./components/TeachersDashBoard/NoticeBoard";
+import AcheckPayments from "./components/AdminDashboard/CheckPayments";
+import AcreateClass from "./components/AdminDashboard/CreateClass";
+import AcreateNotice from "./components/AdminDashboard/CreateNotice";
+import AcreatePayments from "./components/AdminDashboard/CreatePayment";
+import AcreateSubjects from "./components/AdminDashboard/CreateSubjects";
+import Ahome from "./components/AdminDashboard/Home";
+import AnoticeBoard from "./components/AdminDashboard/NoticeBoard";
+import NoticeBoard from "./components/StudentDashboard/NoticeBoard";
 
 const App = () => {
   return (
