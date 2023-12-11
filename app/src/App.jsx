@@ -15,8 +15,6 @@ import {
   CheckPayment,
   StudentDashboard,
   PcheckResult,
-  PmakePayments,
-  PnoticeBoard,
   TcheckPayments,
   TcontactParent,
   TmanageClass,
@@ -29,6 +27,9 @@ import {
   Ahome,
   AnoticeBoard,
 } from "./components";
+
+import PnoticeBoard from "./components/ParentsDashBoard/NoticeBoard";
+import PmakePayments from "./components/ParentsDashBoard/MakePayment";
 
 const App = () => {
   return (
