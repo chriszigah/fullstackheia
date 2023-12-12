@@ -1,21 +1,68 @@
 var express = require("express");
-var path = require("path");
+require("./config/config");
 var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+var cors = require("cors");
+var passport = require("passport");
+var session = require("express-session");
+var SQLiteStore = require("connect-sqlite3")(session);
+var morgan = require("morgan");
+var helmet = require("helmet");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+// Routers
+const indexRouter = require("./routes");
 
-var app = express();
+const app = express();
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:5173",
+  })
+);
 
-app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, "public")));
+app.enable("trust proxy");
 
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
+//app.use(passport.authenticate('session'));
+
+// Cookie Parser
+app.use(cookieParser());
+
+//Session
+const cookieKey = process.env.COOKIE_SESSION_KEY;
+const cookieName = process.env.COOKIE_SESSION_NAME;
+const cookieExpires = process.env.COOKIE_EXPIRATION_MS;
+
+app.use(
+  session({
+    store: new SQLiteStore(),
+    secret: cookieKey,
+    name: cookieName,
+    resave: false,
+    saveUninitialized: true,
+    rolling: true,
+    Cookie: {
+      path: "/",
+      secure: true,
+      expires: Date.now() + parseInt(cookieExpires, 10),
+      maxAge: parseInt(cookieExpires, 10),
+      httpOnly: true,
+      sameSite: "none",
+    },
+  })
+);
+
+// Helmet (no-cache)
+app.use(helmet());
+
+app.use(morgan("dev"));
+app.use(morgan("combined"));
+
+// Routes
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 
 const port = process.env.PORT || 7242;
 
