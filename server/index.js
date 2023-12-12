@@ -62,7 +62,7 @@ app.use(morgan("dev"));
 app.use(morgan("combined"));
 
 // Routes
-app.use("/", indexRouter);
+//app.use("/", indexRouter);
 
 const port = process.env.PORT || 7242;
 
