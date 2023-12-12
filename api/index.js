@@ -118,4 +118,6 @@ const start = async () => {
   }
 };
 
-process.env.NODE_ENV === "test" ? (module.exports = app) : start();
+module.exports = app;
+
+start();
