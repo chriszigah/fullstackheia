@@ -104,20 +104,9 @@ app.use(notFoundMiddleware);
 
 const port = process.env.PORT || 7242;
 
-const start = async () => {
-  try {
-    // Connect SQLITE3 DB
-    app.listen(
-      port,
-      console.log(
-        `Server running in ${process.env.NODE_ENV} mode on port ${port}`
-      )
-    );
-  } catch (error) {
-    console.log("Something went wrong");
-  }
-};
+app.listen(
+  port,
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`)
+);
 
 module.exports = app;
-
-start();
