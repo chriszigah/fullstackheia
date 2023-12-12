@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "express-generator": "^4.16.1"
   }
 }
