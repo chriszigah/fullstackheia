@@ -40,7 +40,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-var session = {
+var sess = {
   store: new SQLiteStore(),
   secret: cookieKey,
   name: cookieName,
@@ -57,7 +57,7 @@ var session = {
   },
 };
 
-app.use(session);
+app.use(session(sess));
 
 // Helmet (no-cache)
 app.use(helmet());
