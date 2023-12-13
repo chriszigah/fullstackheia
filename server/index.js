@@ -7,6 +7,10 @@ var session = require("express-session");
 var SQLiteStore = require("connect-sqlite3")(session);
 var morgan = require("morgan");
 var helmet = require("helmet");
+//Session
+const cookieKey = process.env.COOKIE_SESSION_KEY;
+const cookieName = process.env.COOKIE_SESSION_NAME;
+const cookieExpires = process.env.COOKIE_EXPIRATION_MS;
 
 // Routers
 var indexRouter = require("./routes/index");
@@ -36,30 +40,6 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-//Session
-const cookieKey = process.env.COOKIE_SESSION_KEY;
-const cookieName = process.env.COOKIE_SESSION_NAME;
-const cookieExpires = process.env.COOKIE_EXPIRATION_MS;
-
-app.use(
-  session({
-    store: new SQLiteStore(),
-    secret: cookieKey,
-    name: cookieName,
-    resave: false,
-    saveUninitialized: true,
-    rolling: true,
-    Cookie: {
-      path: "/",
-      secure: true,
-      expires: Date.now() + parseInt(cookieExpires, 10),
-      maxAge: parseInt(cookieExpires, 10),
-      httpOnly: true,
-      sameSite: "none",
-    },
-  })
-);
 
 // Helmet (no-cache)
 app.use(helmet());
