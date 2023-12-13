@@ -7,6 +7,8 @@ var session = require("express-session");
 var SQLiteStore = require("connect-sqlite3")(session);
 var morgan = require("morgan");
 var helmet = require("helmet");
+const redis = require("redis");
+const connectRedis = require("connect-redis");
 //Session
 const cookieKey = process.env.COOKIE_SESSION_KEY;
 const cookieName = process.env.COOKIE_SESSION_NAME;
@@ -40,9 +42,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.set("trust proxy", 1);
 
+const RedisStore = connectRedis(session);
+
 app.use(
   session({
-    //store: new SQLiteStore(),
+    store: new RedisStore({ client: process.env.REDIS_CLIENT }),
     secret: cookieKey,
     name: cookieName,
     resave: false,
