@@ -8,6 +8,11 @@ var SQLiteStore = require("connect-sqlite3")(session);
 var morgan = require("morgan");
 var helmet = require("helmet");
 
+//Session
+const cookieKey = process.env.COOKIE_SESSION_KEY;
+const cookieName = process.env.COOKIE_SESSION_NAME;
+const cookieExpires = process.env.COOKIE_EXPIRATION_MS;
+
 // Routers
 var indexRouter = require("./routes/index");
 
@@ -39,15 +44,15 @@ app.set("trust proxy", 1);
 app.use(
   session({
     store: new SQLiteStore(),
-    secret: process.env.COOKIE_SESSION_KEY,
-    name: process.env.COOKIE_SESSION_NAME,
+    secret: cookieKey,
+    name: cookieName,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     Cookie: {
       path: "/",
       secure: true,
-      expires: Date.now() + parseInt(process.env.COOKIE_EXPIRATION_MS, 10),
-      maxAge: parseInt(process.env.COOKIE_EXPIRATION_MS, 10),
+      expires: Date.now() + parseInt(cookieExpires),
+      maxAge: parseInt(cookieExpires, 10),
       sameSite: "none",
     },
   })
@@ -64,8 +69,6 @@ app.use("/", indexRouter);
 
 //Error Handler
 app.use(function (req, res, next) {
-  res.status(500);
-
   res.status(404).json({ msg: "Unable to find the requested resource!" });
 });
 
