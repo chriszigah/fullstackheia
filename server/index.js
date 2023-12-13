@@ -40,6 +40,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.set("trust proxy", 1);
 
+app.use(
+  session({
+    store: new SQLiteStore(),
+    secret: cookieKey,
+    name: cookieName,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: parseInt(cookieExpires, 10),
+    },
+  })
+);
+
 // Helmet (no-cache)
 app.use(helmet());
 
