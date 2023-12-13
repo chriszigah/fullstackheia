@@ -8,11 +8,6 @@ var SQLiteStore = require("connect-sqlite3")(session);
 var morgan = require("morgan");
 var helmet = require("helmet");
 
-//Session
-const cookieKey = process.env.COOKIE_SESSION_KEY;
-const cookieName = process.env.COOKIE_SESSION_NAME;
-const cookieExpires = process.env.COOKIE_EXPIRATION_MS;
-
 // Routers
 var indexRouter = require("./routes/index");
 
@@ -44,15 +39,15 @@ app.set("trust proxy", 1);
 app.use(
   session({
     store: new SQLiteStore(),
-    secret: cookieKey,
-    name: cookieName,
+    secret: process.env.COOKIE_SESSION_KEY,
+    name: process.env.COOKIE_SESSION_NAME,
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     Cookie: {
       path: "/",
       secure: true,
-      expires: Date.now() + parseInt(cookieExpires, 10),
-      maxAge: parseInt(cookieExpires, 10),
+      expires: Date.now() + parseInt(process.env.COOKIE_EXPIRATION_MS, 10),
+      maxAge: parseInt(process.env.COOKIE_EXPIRATION_MS, 10),
       sameSite: "none",
     },
   })
