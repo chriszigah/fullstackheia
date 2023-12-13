@@ -14,8 +14,6 @@ const cookieExpires = process.env.COOKIE_EXPIRATION_MS;
 
 // Routers
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var profileRouter = require("./routes/users");
 
 var app = express();
 
@@ -40,23 +38,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-app.use(
-  session({
-    store: new SQLiteStore(),
-    secret: cookieKey,
-    name: cookieName,
-    resave: false,
-    saveUninitialized: false,
-    Cookie: {
-      path: "/",
-      secure: true,
-      expires: Date.now() + parseInt(cookieExpires, 10),
-      maxAge: parseInt(cookieExpires, 10),
-      sameSite: "none",
-    },
-  })
-);
+app.set("trust proxy", 1);
 
 // Helmet (no-cache)
 app.use(helmet());
@@ -66,8 +48,6 @@ app.use(morgan("dev"));
 
 // Routes
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/profile", profileRouter);
 
 //Error Handler
 app.use(function (req, res, next) {
