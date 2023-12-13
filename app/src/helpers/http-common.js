@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const http = axios.create({
-  baseURL: "http://localhost:7240",
+  baseURL: "https://heia-sms-api.vercel.app",
   withCredentials: true,
   headers: {
     "content-type": "application/json",
