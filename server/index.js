@@ -64,7 +64,7 @@ app.use(
 // Helmet (no-cache)
 app.use(helmet());
 
-// Logiin
+// Logging
 app.use(morgan("dev"));
 
 // Routes

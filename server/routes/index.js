@@ -4,9 +4,6 @@ var Users = require("../models/users");
 var sendEmail = require("../middlewares/sendEmail");
 
 // Routers
-const usersRoutes = require("./users");
-const profilesRoutes = require("./profile");
-const noticesRoutes = require("./notices");
 
 const { ensureAuthenticated } = require("../middlewares/auth");
 
@@ -40,9 +37,5 @@ router.post("/email", (req, res, next) => {
     .then((response) => res.status(200).send(response.message))
     .catch((error) => res.status(500).send(error.message));
 });
-
-router.use("/users", usersRoutes);
-router.use("/profile", profilesRoutes);
-router.use("/notice", noticesRoutes);
 
 module.exports = router;
