@@ -42,13 +42,17 @@ app.set("trust proxy", 1);
 
 app.use(
   session({
-    store: new SQLiteStore(),
+    //store: new SQLiteStore(),
     secret: cookieKey,
     name: cookieName,
     resave: false,
     saveUninitialized: false,
-    cookie: {
+    Cookie: {
+      path: "/",
+      secure: true,
+      expires: Date.now() + parseInt(cookieExpires, 10),
       maxAge: parseInt(cookieExpires, 10),
+      sameSite: "none",
     },
   })
 );
