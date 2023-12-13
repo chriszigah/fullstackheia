@@ -21,7 +21,7 @@ var app = express();
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: "https://heia-sms-api.vercel.app",
   })
 );
 
