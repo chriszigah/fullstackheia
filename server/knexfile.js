@@ -1,13 +1,29 @@
 // Update with your config settings.
+var dotenv = require("dotenv");
+
+dotenv.config({ path: ".env" });
+
+console.log(process.env.POSTGRES_URL);
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
+ * 
+ * 
+
  */
+
 module.exports = {
   development: {
     client: "sqlite3",
     connection: {
       filename: "./data/heia.db3",
+    },
+    searchPath: ["knex", "public"],
+    migrations: {
+      directory: "./migrations",
+    },
+    seeds: {
+      directory: "./data/seeds",
     },
     useNullAsDefault: true,
   },
@@ -35,9 +51,20 @@ module.exports = {
   production: {
     client: "postgresql",
     connection: {
-      database: process.env.PG_DB,
-      user: process.env.PG_USER,
-      password: process.env.PG_PASSWORD,
+      connectionString: process.env.POSTGRES_URL,
+      ssl: { rejectUnauthorized: false },
+    },
+    user: process.env.POSTGRES_USER,
+    port: 5432,
+    password: process.env.POSTGRES_PASSWORD,
+    sslmode: true,
+    debug: true,
+    searchPath: ["knex", "public"],
+    migrations: {
+      directory: "./migrations",
+    },
+    seeds: {
+      directory: "./data/seeds",
     },
     pool: {
       min: 2,

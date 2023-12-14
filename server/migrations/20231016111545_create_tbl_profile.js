@@ -11,14 +11,13 @@ exports.up = function (knex) {
     tbl.text("lname", 25).notNullable();
     tbl.text("oname", 25);
     tbl.text("gender", 25);
-    tbl.int("phno");
-    tbl.dateTime("dob");
+    tbl.text("phno");
+    tbl.text("dob");
     tbl.text("email", 25);
     tbl.text("classid", 25);
     tbl.text("parentid", 25);
     tbl.text("teacherid", 25);
     tbl.text("researchersid", 25);
-    tbl.timestamp(true, true);
   });
 };
 

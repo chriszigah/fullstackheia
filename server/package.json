@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "knex migrate:latest && node index.js",
+    "migrate": "knex migrate:latest",
+    "make": "knex migrate:make",
+    "seed:make": "knex seed:make"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -29,6 +32,7 @@
     "nodemailer": "^6.9.0",
     "passport": "0.4.1",
     "passport-local": "^1.0.0",
+    "pg": "^8.11.3",
     "random-token": "^0.0.8",
     "redis": "^4.6.11",
     "sqlite3": "^5.0.11",
