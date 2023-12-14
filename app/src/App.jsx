@@ -37,7 +37,6 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/student/dash" element={<StudentDashboard />} />
           <Route path="/student/noticeboard" element={<NoticeBoard />} />
-          <Route path="/register" element={<Register />} />
           <Route path="/student/takequiz" element={<TakeQuiz />} />
           <Route path="/student/checkresults" element={<CheckResult />} />
           <Route path="/student/contactteacher" element={<ContactTeacher />} />
@@ -58,6 +57,7 @@ const App = () => {
           <Route path="/admin/createclass" element={<AcreateClass />} />
           <Route path="/admin/noticeboard" element={<AnoticeBoard />} />
         </Route>
+        <Route path="/register" element={<Register />} />
         <Route index path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
